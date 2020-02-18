@@ -61,12 +61,11 @@ form input, form button{
     padding: 8px 16px; /*preenchimento*/
     border-radius: 4px; /*bordas*/
     border: 1px solid #ffffff88; /*bordas*/
-
 }
 form input{
     background-color: transparent;
 }
-form ::input-placeholder{
+form input::placeholder{
     color: #ffffffaa;
 }
 form button{
