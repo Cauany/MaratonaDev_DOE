@@ -11,9 +11,31 @@ nunjucks.configure("./", {
 //configurar o servidor para apresentar arquivos estáticos
 server.use(express.static('public'))
 
+//configurando a lista de doadores: Vetor ou Array
+const donors = [
+    {
+        name: "Diego Fernades",
+        blood: "AB+"
+    },
+    {
+        name: "Cleiton Souza",
+        blood: "B+"
+    },
+    {
+        name: "Robson Marques",
+        blood: "A+"
+    },
+    {
+        name: "Mayk Brito",
+        blood: "O+"
+    }
+]
+
+
+
 //Configurar a apresentação da página
 server.get("/", function(req, res) {
-    return res.render("index.html")
+    return res.render("index.html", { donors })
 })
 
 
