@@ -9,7 +9,7 @@ body{
     flex-direction: column;
     font-family: 'Roboto', sans-serif;
     height: 100vh;
-    background-color: #fafafa;
+    background-color: #f9f9f9;
 }
 /* ALINHAMENTOS, ESPAÇAMENTOS, LARGURAS E ALTURAS */
 header, main, footer{
@@ -42,16 +42,18 @@ header button{
     color: white;
     font-weight: bold;
     border: none;
+    cursor: pointer;
 }
 /*FORMULARIO*/
-section .form{
+section.form{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 45px; /*espaçamento com grid*/
-    align-items: center;
     background-color: #ff4f4f;
+    align-items: center;
     padding: 16px 64px;
     border-radius: 6px;
+    
 }
 form input, form button{
     width: 100%; /*largura*/
@@ -59,11 +61,12 @@ form input, form button{
     padding: 8px 16px; /*preenchimento*/
     border-radius: 4px; /*bordas*/
     border: 1px solid #ffffff88; /*bordas*/
+
 }
 form input{
     background-color: transparent;
 }
-form ::-webkit-input-placeholder{
+form ::input-placeholder{
     color: #ffffffaa;
 }
 form button{
