@@ -11,6 +11,9 @@ body{
     height: 100vh;
     background-color: #f9f9f9;
 }
+h1, h2{
+    color: #000000cc;
+}
 /* ALINHAMENTOS, ESPAÇAMENTOS, LARGURAS E ALTURAS */
 header, main, footer{
     text-align: center;
@@ -26,6 +29,9 @@ header, .form, main{
 /*TÍTULOS*/
 header h1, main h2{
     margin-bottom: 70px;
+}
+main h2 span{
+    color:#ff4f4f;
 }
 .form h2{
    text-align: right;
