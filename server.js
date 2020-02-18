@@ -8,6 +8,9 @@ nunjucks.configure("./", {
     express: server
 })
 
+//configurar o servidor para apresentar arquivos estáticos
+server.use(express.static('public'))
+
 //Configurar a apresentação da página
 server.get("/", function(req, res) {
     return res.render("index.html")
