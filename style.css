@@ -1,12 +1,15 @@
 html, body{
     margin: 0;
 }
-
+*{
+    box-sizing: border-box; /*corrigindo comportamento padrão css para toda a página*/
+}
 body{
     display: flex;
     flex-direction: column;
-
+    font-family: 'Roboto', sans-serif;
     height: 100vh;
+    background-color: #fafafa;
 }
 /* ALINHAMENTOS, ESPAÇAMENTOS, LARGURAS E ALTURAS */
 header, main, footer{
@@ -24,24 +27,47 @@ header, .form, main{
 header h1, main h2{
     margin-bottom: 70px;
 }
+.form h2{
+   text-align: right;
+   color: #ffffffee;
+   font-size: 18px;
+
+}
 /*HEADER*/
 header button{
+    margin-top: 16px;
     padding: 8px 16px;
     border-radius: 4px;
+    background-color: #ff4f4f;
+    color: white;
+    font-weight: bold;
+    border: none;
 }
 /*FORMULARIO*/
 section .form{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 45px; /*espaçamento com grid*/
+    align-items: center;
+    background-color: #ff4f4f;
+    padding: 16px 64px;
+    border-radius: 6px;
 }
 form input, form button{
     width: 100%; /*largura*/
     margin-bottom: 4px; /*espaçamentos*/
-    box-sizing: border-box; /*corrigindo comportamento padrão css*/
     padding: 8px 16px; /*preenchimento*/
     border-radius: 4px; /*bordas*/
-    border: 1px solid red; /*bordas*/
+    border: 1px solid #ffffff88; /*bordas*/
+}
+form input{
+    background-color: transparent;
+}
+form ::-webkit-input-placeholder{
+    color: #ffffffaa;
+}
+form button{
+    font-weight: bold;
 }
 main .donors{
     display: grid;
