@@ -8,20 +8,9 @@ body{
 
     height: 100vh;
 }
-footer{
-    margin-top: auto;
-}
 /* ALINHAMENTOS, ESPAÇAMENTOS, LARGURAS E ALTURAS */
 header, main, footer{
     text-align: center;
-}
-.donors{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-.form{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
 }
 header, .form, main{
     /* espaçamentos com margin*/
@@ -31,3 +20,36 @@ header, .form, main{
     width: 90%;
     max-width: 500px;
 }
+/*TÍTULOS*/
+header h1, main h2{
+    margin-bottom: 70px;
+}
+/*HEADER*/
+header button{
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+/*FORMULARIO*/
+section .form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 45px; /*espaçamento com grid*/
+}
+form input, form button{
+    width: 100%; /*largura*/
+    margin-bottom: 4px; /*espaçamentos*/
+    box-sizing: border-box; /*corrigindo comportamento padrão css*/
+    padding: 8px 16px; /*preenchimento*/
+    border-radius: 4px; /*bordas*/
+    border: 1px solid red; /*bordas*/
+}
+main .donors{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+footer{
+    margin-top: auto;
+    padding-bottom: 16px;
+    border-top: 1px #eee solid;
+}
+ 
