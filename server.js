@@ -28,7 +28,7 @@ const db = new Pool({
 //Configurar a apresentação da página
 server.get("/", function(req, res) {
     //pegando os dados do banco de dados e apresentando na tela
-    db.query("select * from donors", function(){
+    db.query("select * from donors", function(err, result){
         if(err) return res.send("Erro de banco de dados.")
 
         const donors = result.rows
