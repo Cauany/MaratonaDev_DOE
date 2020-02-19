@@ -15,28 +15,21 @@ server.use(express.static('public'))
 //habilitar body do formulário
 server.use(express.urlencoded({ extended: true }))
 
-//configurando a lista de doadores: Vetor ou Array
-const donors = [
-    {
-        name: "Diego Fernades",
-        blood: "AB+"
-    },
-    {
-        name: "Cleiton Souza",
-        blood: "B+"
-    },
-    {
-        name: "Robson Marques",
-        blood: "A+"
-    },
-    {
-        name: "Mayk Brito",
-        blood: "O+"
-    }
-]
+//configurar a conexão com o banco de dados
+const Pool = require('pg').Pool
+const db = new Pool({ 
+    user: 'postgres',
+    password: 'cicerasouza0708',
+    host: 'localhost',
+    port: 5432,
+    database: 'doe'
+})
+
+
 
 //Configurar a apresentação da página
 server.get("/", function(req, res) {
+    const donors = []
     return res.render("index.html", { donors })
 })
 
@@ -45,12 +38,24 @@ server.post("/", function(req, res){
     const name = req.body.name
     const email = req.body.email
     const blood = req.body.blood
-    //colocando valores dentro do array
-    donors.push({ 
-        name: name,
-        blood: blood,
+    
+if (name == "" || email == "" || blood == ""){
+    return res.send("Todos os campos são obrigatórios.")
+    }
+
+    //colocando valores dentro do banco de dados
+    const query = `
+    insert into donors (" name","email","blood") 
+    values ('$1,$2,$3')`
+
+    const values = [name, email, blood]
+
+    db.query(query, values, function(err){
+        //fluxo de erro
+        if(err) return res.send("erro no banco de dados.")
+        //fluxo ideal
+        return res.redirect("/")
     })
-    return res.redirect("/")
 })
 //Ligando o servidor e permitir o acesso na porta 3000
 server.listen(3000, function() {
