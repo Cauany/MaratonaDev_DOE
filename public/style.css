@@ -79,6 +79,7 @@ form input::placeholder{
 }
 form button{
     font-weight: bold;
+    cursor: pointer;
 }
 /* MAIN */
 main .donors{
