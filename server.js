@@ -51,7 +51,7 @@ server.post("/", function(req, res){
         blood: blood,
     })
     return res.redirect("/")
-}
+})
 //Ligando o servidor e permitir o acesso na porta 3000
 server.listen(3000, function() {
     console.log("Iniciei o servidor")
