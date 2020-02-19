@@ -25,12 +25,15 @@ const db = new Pool({
     database: 'doe'
 })
 
-
-
 //Configurar a apresentação da página
 server.get("/", function(req, res) {
-    const donors = []
-    return res.render("index.html", { donors })
+    //pegando os dados do banco de dados e apresentando na tela
+    db.query("select * from donors", function(){
+        if(err) return res.send("Erro de banco de dados.")
+
+        const donors = result.rows
+        return res.render("index.html", { donors })
+    })
 })
 
 server.post("/", function(req, res){
@@ -57,6 +60,7 @@ if (name == "" || email == "" || blood == ""){
         return res.redirect("/")
     })
 })
+
 //Ligando o servidor e permitir o acesso na porta 3000
 server.listen(3000, function() {
     console.log("Iniciei o servidor")
