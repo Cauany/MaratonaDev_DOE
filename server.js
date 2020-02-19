@@ -45,8 +45,8 @@ if (name == "" || email == "" || blood == ""){
 
     //colocando valores dentro do banco de dados
     const query = `
-    insert into donors (" name","email","blood") 
-    values ('$1,$2,$3')`
+    insert into donors ("name","email","blood") 
+    values ($1,$2,$3)`
 
     const values = [name, email, blood]
 
