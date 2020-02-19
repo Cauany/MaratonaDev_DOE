@@ -5,7 +5,8 @@ const server = express();
 //configurando a template engine
 const nunjucks = require("nunjucks")
 nunjucks.configure("./", {
-    express: server
+    express: server,
+    noCache: true,
 })
 
 //configurar o servidor para apresentar arquivos estáticos
