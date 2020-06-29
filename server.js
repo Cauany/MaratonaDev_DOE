@@ -22,7 +22,7 @@ const db = new Pool({
     password: 'cicerasouza0708',
     host: 'localhost',
     port: 5432,
-    database: 'doe'
+    database: 'Doe'
 })
 
 //Configurar a apresentação da página
