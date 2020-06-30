@@ -3,7 +3,7 @@ const db = require('./db')
 //Função para selecionar toda a tabela Donors no banco de dados e Mostrar em tela.
 exports.showDonors = function(req, res) {
     //pegando os dados do banco de dados e apresentando na tela
-    db.query("select * from donors", function(err, result){
+    db.query("select * from donors order by id desc limit 4", function(err, result){
         if(err) return res.send("Erro ao chamar tabela")
 
         const donors = result.rows

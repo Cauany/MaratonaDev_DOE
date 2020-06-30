@@ -1,16 +1,32 @@
-const name = document.querySelector('form input[name="name"')
-const email = document.querySelector('form input[name="email"')
-const blood = document.querySelector('form select')
-const button = document.querySelector('form button')
+// const name = document.querySelector('form input[name="name"')
+// const email = document.querySelector('form input[name="email"')
+// const blood = document.querySelector('form select')
+// const button = document.querySelector('form button')
 const form = document.querySelector('form')
+const inputs = form.querySelectorAll('input').value
 
-form.onsubmit = (event) => {
-    event.preventDefault()
+for(input in inputs){
+    console.log(input)
+    input.addEventListener('blur', onblurInput)
+    input.addEventListener('focus', onFocusInput)
+}
 
-    if(name.value == '') return alert('Campo vazio')
-    if(email.value == '') return alert('Campo vazio')
-    if(blood.value == '') return alert('Campo vazio')
-    if(blood.value == 'opc') return alert('Campo inválido')
+function onblurInput(){
+    
+    if(input.value == ''){
+        input.style.backgroundColor = 'red'
+        input.value = 'Campo inválido'
+        email.style.marginTop = '5px'
+    }else{
+        input.style.backgroundColor = 'transparent'
+        form.querySelector('span').innerText = ''
+        email.style.marginTop = ''
+    }
+}
 
-    return form.submit()
+function onFocusInput(){
+    
+    if(!(input.value == '')){
+        input.style.backgroundColor = ''
+    }
 }
