@@ -23,8 +23,18 @@
                 <h2> Entre na lista de doadores</h2>
                 <form action="/" method="POST">
                     <input type="text" name="name" placeholder="Nome Completo">
-                    <input type="text" name="email" placeholder="Email">
-                    <input type="text" name="blood" placeholder="Tipo sanguíneo">
+                    <input type="email" name="email" placeholder="Email">
+                    <select name="blood" id=""> 
+                        <option value="opc">Tipo sanguíneo</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                    </select>
                     <button> Quero ajudar</button>
                 </form>
             </section>
@@ -34,10 +44,10 @@
 
             <section class="donors"> 
                 {% for donor in donors%}
-                <div class="donor">
-                    <div class="blood">{{donor.blood}}</div>
-                    <p> {{donor.nome}} </p>
-                </div>
+                    <div class="donor">
+                        <div class="blood">{{donor.blood}}</div>
+                        <p> {{donor.nome}} </p>
+                    </div>
                 {%endfor%}
             </section>
         </main>
@@ -46,5 +56,8 @@
             Com 💗 Cauany Souza
         </footer>
         <script src="/scripts.js"></script>
+        <script src="/animation.js"></script>
+        <script src="/validation.js"></script>
+        <script src="/showScreen.js"></script>
     </body>
 </html>

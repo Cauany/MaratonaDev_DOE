@@ -62,19 +62,24 @@ section.form{
     align-items: center;
     padding: 16px 64px;
     border-radius: 6px;
-    
 }
-form input, form button{
+form input, form button, form select{
     width: 100%; /*largura*/
     margin-bottom: 4px; /*espaçamentos*/
     padding: 8px 16px; /*preenchimento*/
     border-radius: 4px; /*bordas*/
     border: 1px solid #ffffff88; /*bordas*/
 }
-form input{
+form input,
+form select{
     background-color: transparent;
 }
-form input::placeholder{
+
+form select option{
+    color: black;
+}
+form input::placeholder,
+form select{
     color: #ffffffaa;
 }
 form button{
@@ -136,4 +141,23 @@ section.form.hide{
     height: 0;
     margin-top: -70px;
 
+}
+
+.move{
+    animation: move 2s;
+}
+
+/* Animação do formulário */
+@keyframes move {
+    40%{
+        transform: translate(-30%);
+    }
+
+    70%{
+        transform: translate(-10%);
+    }
+
+    100%{
+        transform: translate(0%);
+    }
 }
