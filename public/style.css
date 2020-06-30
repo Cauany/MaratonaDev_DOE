@@ -14,6 +14,26 @@ body{
 h1, h2{
     color: #000000cc;
 }
+div.dark__mode{
+    position: absolute;
+    right: 0;
+    top: 10px;
+    width: 60px;
+    height: 30px;
+    border-radius: 30px;
+    background-color: rgb(75, 74, 74);
+}
+
+div.dark__mode span{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 0px;
+    border-radius: 50%;
+    background-color: ivory;
+    box-shadow: 1px 2px 2px black;
+}
+
 /* ALINHAMENTOS, ESPAÇAMENTOS, LARGURAS E ALTURAS */
 header, main, footer{
     text-align: center;
@@ -51,7 +71,13 @@ header button{
     cursor: pointer;
 }
 header p{
-    font-size: 14px;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgb(139, 139, 139);
+}
+header img{
+    animation: jump 2s infinite backwards;
 }
 /*FORMULARIO*/
 section.form{
@@ -85,7 +111,12 @@ form select{
 form span{
     font-size: 12px;
     color: rgb(41, 41, 41);
+    font-weight: bold;
 }
+.space{
+    margin-top: 5px;
+}
+
 form button{
     font-weight: bold;
     cursor: pointer;
@@ -149,20 +180,34 @@ section.form.hide{
 }
 
 .move{
-    animation: move 2s;
+    animation: move 1s ease-in-out;
 }
 
 /* Animação do formulário */
 @keyframes move {
-    40%{
-        transform: translate(-30%);
+    50%{
+        transform: translate(-5%);
     }
 
-    70%{
-        transform: translate(-10%);
+    75%{
+        transform: translate(-2%);
+    }
+
+    0%, 100%{
+        transform: translate(0%);
+    }
+}
+
+@keyframes jump {
+    0%{
+        transform: translateY(0%);
+    }
+
+    50%{
+        transform: translateY(10%);
     }
 
     100%{
-        transform: translate(0%);
+        transform: translateY(-10%);
     }
 }
