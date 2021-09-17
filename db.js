@@ -15,5 +15,3 @@ module.exports = new Pool({
   connectionString: url,
   ssl: { rejectUnauthorized: false },
 })
-
-module.exports = db
